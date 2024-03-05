@@ -53,22 +53,6 @@ class Frame10(Frame):
 
         return super()._show_score(self.score[:2]) + " " + super().repr_throw(self.score[2])
 
-        # if self.score[0] == 10:
-        #     out = "X"
-        #     for throw in range(1, 3):
-        #         try:
-        #             out += " " + super().repr_throw(self.score[throw])
-        #         except IndexError:
-        #             out += "  "
-        #     return out
-        #
-        # try:
-        #     third_throw = " " + super().repr_throw(self.score[2])
-        # except IndexError:
-        #     third_throw = "  "
-        #
-        # return super().__str__() + third_throw
-
 
 if __name__ == "__main__":
 
@@ -103,6 +87,7 @@ if __name__ == "__main__":
         for throw in score:
             frame.throw(throw)
         # print(f"|{goal}|: |{frame}|")
+        print(frame.__repr__())
         assert frame.__str__() == goal
 
     # Testing erroneous scores.

@@ -53,6 +53,13 @@ class Frame:
         except IndexError:
             return f"{cls.repr_throw(score[0])}  "
 
+    def __repr__(self):
+        out = ""
+        for value in self.score:
+            out += f"{value:2d}, "
+
+        return f"{out[:-2]:10s}"
+
     def __str__(self):
         return self._show_score(self.score)
 
